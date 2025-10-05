@@ -1,0 +1,86 @@
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 220px;
+  background: #1c1f23;
+  color: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.profile{
+    height: 80px;
+    width: 80px;
+}
+
+.sidebar-menu li {
+  margin: 15px 0;
+}
+
+.sidebar-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.sidebar-menu li.active a,
+.sidebar-menu a:hover {
+  background: #e9ecef;
+  color: black;
+}
+
+/* Toggle button */
+.toggle-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #343a40;
+  background: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  z-index: 1100;
+  transition: left 0.3s ease-in-out;
+}
+
+/* Hide checkbox */
+#sidebar-toggle {
+  display: none;
+}
+
+/* Sidebar open */
+#sidebar-toggle:checked ~ .sidebar {
+  transform: translateX(0);
+}
+
+#sidebar-toggle:checked + .toggle-btn {
+  left: 170px;
+}
+
+/* Content */
+.content {
+  margin-top: 30px;
+  margin-left: 0;
+  transition: margin-left 0.3s ease-in-out;
+  padding: 20px;
+}
+
+@media (min-width: 769px) {
+  #sidebar-toggle:checked ~ .content {
+    margin-left: 220px;
+  }
+}
+
+/* Table rounded corners */
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+}
